@@ -1,0 +1,97 @@
+﻿@using TweetsAPI.Models;
+@model TweetModel
+@{
+    ViewBag.Title = "Tweets API";
+}
+
+<link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/jquery.dataTables.min.css")">
+
+
+
+@using (Html.BeginForm("ViewTweets", "Tweets", FormMethod.Post))
+{
+
+    <div>
+        <label>@Model.StatusMessage</label>
+    </div>
+    <div>
+        <div>
+            <div>
+                @Html.LabelFor(model => model.StartDate)
+            </div>
+            <div>
+                @Html.TextBoxFor(model => model.StartDate, new { @id = "txtStartDate", @Value = "2016-01-20T04:07:56.271Z", @style = "width:200px", @autocomplete = "off" })
+                @Html.ValidationMessageFor(model => model.StartDate)
+            </div>
+        </div>
+        <br />
+        <div>
+            <div>
+                @Html.LabelFor(model => model.EndDate)
+            </div>
+            <div>
+                @Html.TextBoxFor(model => model.EndDate, new { @id = "txtEndDate", @Value = "2017-01-20T04:07:56.271Z", @style = "width:200px", @autocomplete = "off" })
+                @Html.ValidationMessageFor(model => model.EndDate)
+            </div>
+        </div>
+        <br />
+        <div>
+
+            <button type="submit" id="btnSubmit">Get Tweets</button>
+            <button type="reset">Reset</button>
+        </div>
+    </div>
+}
+
+<br />
+<br />
+<div class="row">
+    @if (Model.TweetsData != null && Model.CurrentCount > 0)
+    {
+        <table id="tblTweets">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Stamp</th>
+                    <th>Tweet</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @foreach (var tweet in Model.TweetsData)
+                {
+                    <tr>
+                        <td>@tweet.Id</td>
+
+                        <td>@tweet.Stamp</td>
+
+                        <td>@tweet.Text</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+        <div id="divResultCount">
+            <div>
+                <strong>Total results from Restful API : </strong> @Model.TotalCount
+            </div>
+            <div>
+               <strong> Total results after removing duplicates : </strong>@Model.CurrentCount
+            </div>
+        </div>
+    }
+</div>
+
+@section Scripts{
+
+    <script type="text/javascript" charset="utf8" src="@Url.Content("~/Scripts/jquery.dataTables.min.js")"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#tblTweets').DataTable({
+                "paging": true,
+                'pageLength': 10,
+            });
+        });
+    </script>
+
+}

@@ -1,0 +1,6 @@
+/packages
+/.vs
+/TweetsAPI/bin
+/TweetsAPI/obj
+/TweetsAPI.Tests/bin
+/TweetsAPI.Tests/obj
