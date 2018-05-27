@@ -11,7 +11,7 @@ A Client needs us to pull 2 years of ultra-cool curated tweets they have collect
 +	NuGet package manager
 
 
-# Requirements
+## Requirements:
 
 1.	Your application should be written in C# or JavaScript
 2.	Submit your app via a public GitHub repository (make sure we can access it!)
@@ -27,29 +27,31 @@ A part from the default NuGet packages given my Microsoft at the time create MVC
 
 #### NuGet Packages used in application: 
 
-##### Unity.MVC: used for dependency resolving in controller’s, injecting service for achieve loosely couple 
+** Unity.MVC:** 
+		used for dependency resolving in controller’s, injecting service for achieve loosely couple 
 
-**Microsoft.AspNet.WebApi.Client:** This package adds support for formatting and content negotiation to System.Net.Http. It includes support for JSON, XML, and form URL encoded data.
+**Microsoft.AspNet.WebApi.Client:** 
+		This package adds support for formatting and content negotiation to System.Net.Http. It includes support for JSON, XML, and form URL encoded data.
 
 **JavaScript library Used in application:**
 
 **Datatables**, version 1.10.16, downloaded from https://datatables.net/, used for display Restful API result in table format.
 You can see the actual source code in the below files:
 
-1.**Model:** TweetModel.cs, A class used for get and set data to controller and view
-	**Model Path:** "/TweetsAPI/Controllers/ TweetModel.cs”
+1.	**Model:** `TweetModel.cs`, A class used for get and set data to controller and view
+			**Model Path:** "/TweetsAPI/Controllers/ TweetModel.cs”
 	
-2.**View:**  ViewTweets.csthml, consists of html and JavaScript code
-	**View Path:** “/TweetsAPI/Views/tweets/ViewTweets.cshtml”
+2.	**View:**  `ViewTweets.csthml`, consists of html and JavaScript code
+			**View Path:** “/TweetsAPI/Views/tweets/ViewTweets.cshtml”
 	
-3.**Controller:** TweetsController.cs, Gets the data from the service and send it to view 
-	**Controller Path:** “/TweetsAPI/Controllers/ TweetsController.cs”
+3.	**Controller:** `TweetsController.cs`, Gets the data from the service and send it to view 
+			**Controller Path:** “/TweetsAPI/Controllers/ TweetsController.cs”
 	
-4.**Interface:** ITweetService.cs, this interface is passed as a parameter into constructor of controller, to achieve loosely coupled, if any new method added in this interface, the controller does not required to implementing newly added function. You can find the dependency resolving in  code in location “/TweetsAPI/App_Start/UnityConfig.cs” 
-	**Interface Path:** “/TweetsAPI/Interface/ITweetService.cs”
+4.  **Interface:** `ITweetService.cs`, this interface is passed as a parameter into constructor of controller, to achieve loosely coupled, if any new method added in this interface, the controller does not required to implementing newly added function. You can find the dependency resolving in  code in location “/TweetsAPI/App_Start/UnityConfig.cs” 
+			**Interface Path:** “/TweetsAPI/Interface/ITweetService.cs”
 
-5.**Service:**  TweetService.cs, make calls to (//badapi.XXXX.io/swagger/) API returns response in JSON, which gets 100 records. By using Distinct method in LINQ, we eliminated duplicate records. 
-	**Service Path:** “/TweetsAPI/Interface/TweetService.cs”
+5.	**Service:** `TweetService.cs`, make calls to (//badapi.XXXX.io/swagger/) API returns response in JSON, which gets 100 records. By using Distinct method in LINQ, we eliminated duplicate records. 
+			**Service Path:** “/TweetsAPI/Interface/TweetService.cs”
 
 
 ## Running Application: 
@@ -58,7 +60,7 @@ You can see the actual source code in the below files:
 	Alternatively, use command “git clone https://github.com/ravitejacore/ExamAPI.git”
 	From command prompt
 	
-2.	 Open the TweetsAPI.sln , with visual studio 2015, or later
+2.	 Open the `TweetsAPI.sln` , with visual studio 2015, or later
 
 3.	The project will be opened  and then Hit F5 
 
@@ -66,14 +68,16 @@ You can see the actual source code in the below files:
 
 5.	Then you can see the result browser, please hit  Get Tweets button , you will get tweets
 
+
 ## Unit Testing: 
 
 **Case 1:** 	When we enters startDate as 2016-03-20T04:07:56.271Z and end Date as 2017-03-20T04:07:56.271Z the API returns 100 results, and Http Status code is 200 OK
-**Status:** Pass
+	**Status:** Pass
 
 **Case 2:** 	 When we enters startDate as AAAA-03-20T04:07:56.271Z and End Date as BBBB-03-20T04:07:56.271Z the API returns 0 results, and Http Status code is 200 OK
-**Status:** Fail
-**Expected Result:** The API should return Http Status Code 400 Bad Request, “Invalid StartDate and/or EndDate”
+	**Status:** Fail
+	**Expected Result:** The API should return Http Status Code 400 Bad Request, “Invalid StartDate and/or EndDate”
+	
 
 ## Conclusion:
 
