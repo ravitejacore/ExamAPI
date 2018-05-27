@@ -43,7 +43,7 @@ A part from the default NuGet packages given my Microsoft at the time create MVC
 You can see the actual source code in the below files:
 
 
-##Find the actual source code in the below files:
+## Find the actual source code in the below files:
 
 
 1.	**Model:** `TweetModel.cs`, A class used for get and set data to controller and view
