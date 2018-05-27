@@ -39,25 +39,35 @@ A part from the default NuGet packages given my Microsoft at the time create MVC
 You can see the actual source code in the below files:
 
 1.	**Model:** `TweetModel.cs`, A class used for get and set data to controller and view
+			
+			
 			**Model Path:** "/TweetsAPI/Controllers/ TweetModel.cs”
 	
 2.	**View:**  `ViewTweets.csthml`, consists of html and JavaScript code
+			
+			
 			**View Path:** “/TweetsAPI/Views/tweets/ViewTweets.cshtml”
 	
 3.	**Controller:** `TweetsController.cs`, Gets the data from the service and send it to view 
+
+
 			**Controller Path:** “/TweetsAPI/Controllers/ TweetsController.cs”
 	
 4.  **Interface:** `ITweetService.cs`, this interface is passed as a parameter into constructor of controller, to achieve loosely coupled, if any new method added in this interface, the controller does not required to implementing newly added function. You can find the dependency resolving in  code in location “/TweetsAPI/App_Start/UnityConfig.cs” 
+			
+			
 			**Interface Path:** “/TweetsAPI/Interface/ITweetService.cs”
 
 5.	**Service:** `TweetService.cs`, make calls to (//badapi.XXXX.io/swagger/) API returns response in JSON, which gets 100 records. By using Distinct method in LINQ, we eliminated duplicate records. 
+			
+			
 			**Service Path:** “/TweetsAPI/Interface/TweetService.cs”
 
 
 ## Running Application: 
 
 1.	Download the source code from https://github.com/ravitejacore/TweetsAPI 
-	Alternatively, use command “git clone https://github.com/ravitejacore/ExamAPI.git”
+	Alternatively, use command `“git clone https://github.com/ravitejacore/ExamAPI.git”`
 	From command prompt
 	
 2.	 Open the `TweetsAPI.sln` , with visual studio 2015, or later
@@ -71,11 +81,17 @@ You can see the actual source code in the below files:
 
 ## Unit Testing: 
 
-**Case 1:** 	When we enters startDate as 2016-03-20T04:07:56.271Z and end Date as 2017-03-20T04:07:56.271Z the API returns 100 results, and Http Status code is 200 OK
+##### **Case 1:** 	
+		When we enters startDate as 2016-03-20T04:07:56.271Z and end Date as 2017-03-20T04:07:56.271Z the API returns 100 results, and Http Status code is 200 OK
+	
 	**Status:** Pass
 
-**Case 2:** 	 When we enters startDate as AAAA-03-20T04:07:56.271Z and End Date as BBBB-03-20T04:07:56.271Z the API returns 0 results, and Http Status code is 200 OK
+#####**Case 2:**
+ 	 
+	 When we enters startDate as AAAA-03-20T04:07:56.271Z and End Date as BBBB-03-20T04:07:56.271Z the API returns 0 results, and Http Status code is 200 OK
+	
 	**Status:** Fail
+	
 	**Expected Result:** The API should return Http Status Code 400 Bad Request, “Invalid StartDate and/or EndDate”
 	
 
