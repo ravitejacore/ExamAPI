@@ -1,4 +1,7 @@
-#  A Bad REST API
+# Technical Document
+
+
+####  A Bad REST API
 
 A Client needs us to pull 2 years of ultra-cool curated tweets they have collected and stored themselves. We need to make sure that we get all tweets from 2016 and 2017. The only way to get this data is to use the client's REST API. However, it is not a well-designed API.
 
@@ -13,13 +16,14 @@ A Client needs us to pull 2 years of ultra-cool curated tweets they have collect
 
 ## Requirements:
 
-1.	Your application should be written in C# or JavaScript
-2.	Submit your app via a public GitHub repository (make sure we can access it!)
+1.	Application should be written in C# or JavaScript
+2.	Submit app via a public GitHub repository 
 3.	We must be able to build and run your app
 4.	The final results should contain all records with no duplicates
-5.	The results should be output in a way that allows us to validate your records
+5.	The results should be output in a way that allows us to validate records
 6.	The operation should complete in a reasonable amount of time
-7.	Your application should make actual calls to our actual pretend REST API (https://badapi.xxxx.io/swagger/) to get the tweets.
+7.	Application should make actual calls to our actual pretend REST API (https://badapi.xxxx.io/swagger/) to get the tweets.
+
 
 ## Development: 
 
@@ -100,3 +104,5 @@ You can see the actual source code in the below files:
 	![alt text](https://raw.githubusercontent.com/ravitejacore/LeaveMe/master/images/search.jpg "You can serach for contents, it displays search results")
  
 5.	All the result are fetched from the pretend REST API (https://badapi.xxxxx.io/swagger/)to get tweets 
+
+6. You can find the Technical document in the location https://github.com/ravitejacore/ExamAPI/blob/master/Document_v1.0.doc
