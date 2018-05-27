@@ -71,8 +71,11 @@ You can see the actual source code in the below files:
 
 4.	After hitting the F5 you can see NuGet Restoring packages, please do not cancel it.
 
-5.	Then you can see the result browser, please hit  Get Tweets button , you will get tweets
+5.	Then you can see the result browser, please hit  **`Get Tweets`** button , you will get tweets without duplicate tweets.
 
+	![alt text](https://raw.githubusercontent.com/ravitejacore/LeaveMe/master/images/screen1.jpg "click on Get Tweets button")
+	
+	![alt text](https://raw.githubusercontent.com/ravitejacore/LeaveMe/master/images/screen2.jpg "Displaying REST API result")
 
 ## Unit Testing: 
 
@@ -93,6 +96,7 @@ You can see the actual source code in the below files:
 1.	Application was written C#, and used third party JavaScript libraries display result
 2.	You can download the application from GitHub from the below location https://github.com/ravitejacore/TweetsAPI 
 3.	Verified that the final result had no duplicate results 
-4.	We can validate your results from the search feature in the result table 
+4.	We can validate your results from the search feature in the result table
+	![alt text](https://raw.githubusercontent.com/ravitejacore/LeaveMe/master/images/search.jpg "You can serach for contents, it displays search results")
  
 5.	All the result are fetched from the pretend REST API (https://badapi.xxxxx.io/swagger/)to get tweets 
