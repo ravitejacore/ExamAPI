@@ -82,7 +82,7 @@ You can see the actual source code in the below files:
 	Status: Pass
 
 ##### Case 2:
- 	 When we enters startDate as AAAA-03-20T04:07:56.271Z and End Date as BBBB-03-20T04:07:56.271Z the API returns 0 results, and Http Status code is 200 OK
+ When we enters startDate as AAAA-03-20T04:07:56.271Z and End Date as BBBB-03-20T04:07:56.271Z the API returns 0 results, and Http Status code is 200 OK
 	
 	Status: Fail
 **Expected Result:** The API should return Http Status Code 400 Bad Request, “Invalid StartDate and/or EndDate”
