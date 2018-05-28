@@ -46,23 +46,23 @@ You can see the actual source code in the below files:
 #### Find the actual source code in the below files:
 
 
-1.	**Model:** `TweetModel.cs`, A class used for get and set data to controller and view
+1.	**Model:** [TweetModel.cs](https://github.com/ravitejacore/ExamAPI/blob/master/TweetsAPI/Models/TweetModel.cs), A class used for get and set data to controller and view
 			
-		Model Path: "/TweetsAPI/Controllers/ TweetModel.cs”
+		Model Path: "/TweetsAPI/Controllers/TweetModel.cs”
 	
-2.	**View:**  `ViewTweets.csthml`, consists of html and JavaScript code
+2.	**View:**  [ViewTweets.csthml](https://github.com/ravitejacore/ExamAPI/blob/master/TweetsAPI/Views/tweets/ViewTweets.cshtml), consists of html and JavaScript code
 		
 		View Path: “/TweetsAPI/Views/tweets/ViewTweets.cshtml”
 	
-3.	**Controller:** `TweetsController.cs`, Gets the data from the service and send it to view 
+3.	**Controller:** [TweetsController.cs](https://github.com/ravitejacore/ExamAPI/blob/master/TweetsAPI/Controllers/TweetsController.cs), Gets the data from the service and send it to view 
 
-		Controller Path: “/TweetsAPI/Controllers/ TweetsController.cs”
+		Controller Path: “/TweetsAPI/Controllers/TweetsController.cs”
 	
-4. 	**Interface:** `ITweetService.cs`, this interface is passed as a parameter into constructor of controller, to achieve loosely coupled, if any new method added in this interface, the controller does not required to implementing newly added function. You can find the dependency resolving in  code in location “/TweetsAPI/App_Start/UnityConfig.cs” 
+4. 	**Interface:** [ITweetService.cs](https://github.com/ravitejacore/ExamAPI/blob/master/TweetsAPI/Interface/ITweetService.cs), this interface is passed as a parameter into constructor of controller, to achieve loosely coupled, if any new method added in this interface, the controller does not required to implementing newly added function. You can find the dependency resolving in  code in location “/TweetsAPI/App_Start/UnityConfig.cs” 
 		
 		Interface Path: “/TweetsAPI/Interface/ITweetService.cs”
 
-5.	**Service:** `TweetService.cs`, make calls to (//badapi.XXXX.io/swagger/) API returns response in JSON, which gets 100 records. By using Distinct method in LINQ, we eliminated duplicate records. 
+5.	**Service:** [TweetService.cs](https://github.com/ravitejacore/ExamAPI/blob/master/TweetsAPI/Interface/TweetService.cs), make calls to (//badapi.XXXX.io/swagger/) API returns response in JSON, which gets 100 records. By using Distinct method in LINQ, we eliminated duplicate records. 
 			
 		Service Path: “/TweetsAPI/Interface/TweetService.cs”
 
